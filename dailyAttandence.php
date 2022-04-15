@@ -10,7 +10,7 @@
 <div class="container">
 	<div class="headbar">
 		<div class="logo">
-			<a href="./index.html"><img src="./img/logo.png"></a>
+			<a href="homepage.php"><img src="./img/logo.png"></a>
 		</div>
 		<div class="login">
 			<a href="./login_page.html" class="log_in">log in</a>
@@ -21,7 +21,7 @@
 		<div class="vnavbar">
 			<ul>
 				<li>
-					<a href="./index.html" class="vnav_but ">
+					<a href="homepage.php" class="vnav_but ">
 						<i class="fa fa-home" aria-hidden="true" class="vhome_icon"></i>
 						<span class="vhome-text"> HOME </span>
 					</a>
@@ -32,15 +32,14 @@
 				<li><a href="#" class="vnav_but">BBM</a></li>
 			</ul>
 		</div>
-		<form method="POST" action="bcaAttandenceTable.php">
+		<form method="POST" action="att_send_to_db.php">
 			<div class="dailyAtt_table  ">
-                <div>
 
                     <div class="dailyAtt_month">
-                        <label>Date:</label>
-                        <input type="date" >
+                        <label style="font-size: 20px">Date:</label>
+                        <input type="date" name="date" style="width: 150px; font-size: 18px; margin: 30px 10px; padding:1px 5px">
                     </div>
-                </div>
+
 				<table>
 					<tr>
 						<th>
@@ -69,7 +68,7 @@
                         </td>
                         <td>
                             <?php
-                            echo  $result['a_s_firstname']. $result['a_s_lastname'];
+                            echo  $result['s_firstname']. $result['s_lastname'];
 
                             ?>
                         </td>
@@ -77,11 +76,11 @@
                             <label>
                                 present:
                             </label>
-                            <input type="radio" name="attendence<?php echo $i?>bca"value="p" class="s_present">
+                            <input required type="radio" name="attendence[<?php echo $result['s_id']?>]" value="p" class="s_present">
                             <label>
                                 absent:
                             </label>
-                            <input type="radio" name="attendence<?php echo $i?>bca" value="a" class="s_absent">
+                            <input required type="radio" name="attendence[<?php echo $result['s_id']?>]" value="a" class="s_absent">
                         </td>
                     </tr>
                     <?php
@@ -89,21 +88,28 @@
                     }
                     ?>
 				</table>
-                <div class="dailyAtt_button">
-                    <button>
-                        submit
-                    </button>
+                <div style="display: flex; justify-content: space-between;padding: 30px 0;width: 100%">
+                    <a href="att_date.php">
+                        <input type="button" value="view" style="width: 120px; height: 50px;display: inline">
+
+                    </a>
+
+                    <div class="dailyAtt_button">
+                        <button name="submit_att">
+                            submit
+                        </button>
+                    </div>
                 </div>
 			</div>
 
 
-<!--                    <a href="./bcaAttandenceTable.php" >-->
-<!--                        <div class="backbutton">-->
-<!--                            <button>-->
-<!--                                back-->
-<!--                            </button>-->
-<!--                        </div>-->
-<!--                    </a>-->
+                    <a href="./bcaAttandenceTable.php" >
+                        <div class="backbutton">
+                            <button>
+                                back
+                            </button>
+                        </div>
+                    </a>
 
 
         </form>
