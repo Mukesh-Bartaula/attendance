@@ -32,13 +32,13 @@
 				<li><a href="#" class="vnav_but">BBM</a></li>
 			</ul>
 		</div>
-		<form method="POST" action="bcaAttandenceTable.php">
+		<form method="POST" action="att_send_to_db.php">
 			<div class="dailyAtt_table  ">
                 <div>
 
                     <div class="dailyAtt_month">
-                        <label>Date:</label>
-                        <input type="date" >
+                        <label style="font-size: 20px">Date:</label>
+                        <input type="date" name="date" style="width: 150px; font-size: 18px; margin: 30px 10px; padding:1px 5px">
                     </div>
                 </div>
 				<table>
@@ -69,7 +69,7 @@
                         </td>
                         <td>
                             <?php
-                            echo  $result['a_s_firstname']. $result['a_s_lastname'];
+                            echo  $result['s_firstname']. $result['s_lastname'];
 
                             ?>
                         </td>
@@ -77,11 +77,11 @@
                             <label>
                                 present:
                             </label>
-                            <input type="radio" name="attendence<?php echo $i?>bca"value="p" class="s_present">
+                            <input required type="radio" name="attendence[<?php echo $result['s_id']?>]" value="p" class="s_present">
                             <label>
                                 absent:
                             </label>
-                            <input type="radio" name="attendence<?php echo $i?>bca" value="a" class="s_absent">
+                            <input required type="radio" name="attendence[<?php echo $result['s_id']?>]" value="a" class="s_absent">
                         </td>
                     </tr>
                     <?php
@@ -89,21 +89,25 @@
                     }
                     ?>
 				</table>
+                <a href="att_date.php">
+                    <input type="button" value="view" style="width: 120px; height: 50px; margin: 30px">
+                </a>
+
                 <div class="dailyAtt_button">
-                    <button>
+                    <button name="submit_att">
                         submit
                     </button>
                 </div>
 			</div>
 
 
-<!--                    <a href="./bcaAttandenceTable.php" >-->
-<!--                        <div class="backbutton">-->
-<!--                            <button>-->
-<!--                                back-->
-<!--                            </button>-->
-<!--                        </div>-->
-<!--                    </a>-->
+                    <a href="./bcaAttandenceTable.php" >
+                        <div class="backbutton">
+                            <button>
+                                back
+                            </button>
+                        </div>
+                    </a>
 
 
         </form>

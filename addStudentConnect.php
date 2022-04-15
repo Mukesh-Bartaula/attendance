@@ -7,7 +7,7 @@ if(isset($_POST['addStudent'])) {
     $email = $_POST['contact_form_email'];
 
    
-    $sql = "INSERT INTO addstudent( a_s_firstname, a_s_lastname, a_s_roll, a_s_email )
+    $sql = "INSERT INTO students( s_firstname, s_lastname, s_roll, s_email )
 values (' $firstname', ' $lastname', '$number', '$email' )";
     $query = mysqli_query($conn, $sql);
     if($query){

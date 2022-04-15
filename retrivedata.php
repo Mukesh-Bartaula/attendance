@@ -1,6 +1,6 @@
 <?php
     include "db.php";
-    $sql = "SELECT * FROM  addstudent ORDER BY a_s_firstname";
+    $sql = "SELECT * FROM  students ORDER BY s_firstname";
     $query = mysqli_query($conn, $sql);
     ?>
 

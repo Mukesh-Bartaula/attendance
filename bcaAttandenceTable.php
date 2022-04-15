@@ -36,6 +36,13 @@
 	         </ul>
 	      	</div>
 	      	<div class="att_body" >
+                <div class="date" style="margin: 20px 40px; font-size: 20px; text-decoration: underline">
+                    <?php
+                    echo "Date:" ;
+                    echo $_POST['a_date'];
+                    ?>
+                </div>
+
   	        <table>
               <tr>
                 <th id="std_name">
@@ -78,24 +85,35 @@
               </tr>
                 <?php
                 include 'retrivedata.php';
+                $i=1;
                 while($result = mysqli_fetch_assoc($query)){
 
                 ?>
                     <tr>
                         <td style="text-transform: capitalize">
                             <?php
-                           echo $result['a_s_firstname']. $result['a_s_lastname'];
+                           echo $result['s_firstname']. $result['s_lastname'];
+
                             ?>
                         </td>
                         <td>
-                            <div id="display"></div><script>
-                                if(isset($_POST['submit'])) {
-                                    val = document.querySelector('input[name="genderS"]:checked').value;
-                                    document.getElementById("display").innerHTML = val;
-                                }
-                            </script>
+<!--                            --><?php
+//
+//                            if(isset($_POST['submit'])){
+//                                echo "hi";
+//                               $att = $_POST['attendence'].$i.$_POST['bca'];
+//                               echo $att;
+//
+//                            }
+//                            ?>
+
                         </td>
-                        <td></td>
+                        <td>
+<!--                            --><?php
+//
+//                            echo $_POST['attendence1bca'];
+//                          ?>
+                        </td>
                         <td></td>
                         <td></td>
                         <td></td>

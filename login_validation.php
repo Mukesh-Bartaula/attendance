@@ -17,7 +17,7 @@ if (isset($_POST['login_but'])) {
         include "db.php";
         $username  = $_POST['username'];
         $password = $_POST['password'];
-        $sql = "SELECT * from student where Email = '$username' AND password ='$password'";
+        $sql = "SELECT * from logindb where Email = '$username' AND password ='$password'";
         $query = mysqli_query($conn, $sql);
         $count_rows =mysqli_num_rows($query);
         if($count_rows > 0){
