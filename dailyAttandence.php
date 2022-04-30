@@ -10,7 +10,7 @@
 <div class="container">
 	<div class="headbar">
 		<div class="logo">
-			<a href="homepage.php"><img src="./img/logo.png"></a>
+			<a href="./index.html"><img src="./img/logo.png"></a>
 		</div>
 		<div class="login">
 			<a href="./login_page.html" class="log_in">log in</a>
@@ -21,7 +21,7 @@
 		<div class="vnavbar">
 			<ul>
 				<li>
-					<a href="homepage.php" class="vnav_but ">
+					<a href="./index.html" class="vnav_but ">
 						<i class="fa fa-home" aria-hidden="true" class="vhome_icon"></i>
 						<span class="vhome-text"> HOME </span>
 					</a>
@@ -34,6 +34,7 @@
 		</div>
 		<form method="POST" action="att_send_to_db.php">
 			<div class="dailyAtt_table  ">
+                <div>
 
                     <div class="dailyAtt_month">
                         <label style="font-size: 20px">Date:</label>
@@ -68,7 +69,7 @@
                         </td>
                         <td>
                             <?php
-                            echo  $result['s_firstname']. $result['s_lastname'];
+                            echo  $result['a_s_firstname']. $result['a_s_lastname'];
 
                             ?>
                         </td>
@@ -76,11 +77,11 @@
                             <label>
                                 present:
                             </label>
-                            <input required type="radio" name="attendence[<?php echo $result['s_id']?>]" value="p" class="s_present">
+                            <input type="radio" name="attendence<?php echo $i?>bca"value="p" class="s_present">
                             <label>
                                 absent:
                             </label>
-                            <input required type="radio" name="attendence[<?php echo $result['s_id']?>]" value="a" class="s_absent">
+                            <input type="radio" name="attendence<?php echo $i?>bca" value="a" class="s_absent">
                         </td>
                     </tr>
                     <?php
@@ -103,13 +104,13 @@
 			</div>
 
 
-                    <a href="./bcaAttandenceTable.php" >
-                        <div class="backbutton">
-                            <button>
-                                back
-                            </button>
-                        </div>
-                    </a>
+<!--                    <a href="./bcaAttandenceTable.php" >-->
+<!--                        <div class="backbutton">-->
+<!--                            <button>-->
+<!--                                back-->
+<!--                            </button>-->
+<!--                        </div>-->
+<!--                    </a>-->
 
 
         </form>

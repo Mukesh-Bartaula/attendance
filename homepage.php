@@ -12,12 +12,12 @@
 <body>
   	<div class="container">
   		<?php include "headbar.php";?>
-      <div class="newsContainer">
-        <div class="newsBody">
+      <div class="att_Container">
+        <div class="att_Body">
             <a  href="dailyAttandence.php">
-              <div class="card_container">
+              <div class="att_card_container">
               <img src="./img/bca-1.jpg">
-                   <div class="newsParagraph">
+                   <div class="attParagraph">
                       <h1>
                         BCA
                       </h1>
@@ -30,7 +30,7 @@
             <a  href="./newsDetailPage.html">
               <div class="card_container">
               <img src="./img/bim-2.jpg">
-                   <div class="newsParagraph">
+                   <div class="attParagraph">
                       <h1>
                         BIM
                       </h1>
